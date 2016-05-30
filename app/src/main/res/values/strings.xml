@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Hapduk_terminal</string>
+    <string name="app_name_to_korean">합덕터미널</string>
+    <string name="city">시내</string>
+    <string name="intercity">시외</string>
+    <string name="pleaseSendManyUserComment">많은 사용자 의견을 보내주세요.</string>
+    <string name="departure">출발지</string>
+    <string name="pleaseSelectDeparture">출발지를 선택해 주세요.</string>
+    <string name="destination">도착지</string>
+    <string name="pleaseSelectDestination">도착지를 선택해 주세요.</string>
+    <string name="select">선택</string>
+    <string name="required">예상소요시간</string>
+    <string name="adult">어른</string>
+    <string name="teenager">청소년</string>
+    <string name="child">어린이</string>
+</resources>
