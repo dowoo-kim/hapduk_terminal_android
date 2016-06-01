@@ -11,6 +11,7 @@ public class StopInfo {
     private int routeId;
     private int stops_in_route_id;
     private int sequence;
+    private int is_last_item;
     private int time_table_id;
     private String departure_time;
     private int child;
@@ -18,12 +19,13 @@ public class StopInfo {
     private int adult;
     private String required;
 
-    public StopInfo(int id, String name, int routeId, int stops_in_route_id, int sequence, int time_table_id, String departure_time, int child, int teenager, int adult, String required) {
+    public StopInfo(int id, String name, int routeId, int stops_in_route_id, int sequence, int is_last_item, int time_table_id, String departure_time, int child, int teenager, int adult, String required) {
         this.id = id;
         this.name = name;
         this.routeId = routeId;
         this.stops_in_route_id = stops_in_route_id;
         this.sequence = sequence;
+        this.is_last_item = is_last_item;
         this.time_table_id = time_table_id;
         this.departure_time = departure_time;
         this.child = child;
@@ -72,6 +74,14 @@ public class StopInfo {
         this.sequence = sequence;
     }
 
+    public int getIs_last_item() {
+        return is_last_item;
+    }
+
+    public void setIs_last_item(int is_last_item) {
+        this.is_last_item = is_last_item;
+    }
+
     public int getTime_table_id() {
         return time_table_id;
     }
@@ -92,6 +102,10 @@ public class StopInfo {
         return child;
     }
 
+    public String getChildString(){
+        return Integer.toString(this.child);
+    }
+
     public void setChild(int child) {
         this.child = child;
     }
@@ -100,12 +114,20 @@ public class StopInfo {
         return teenager;
     }
 
+    public String getTeenagerString(){
+        return Integer.toString(this.teenager);
+    }
+
     public void setTeenager(int teenager) {
         this.teenager = teenager;
     }
 
     public int getAdult() {
         return adult;
+    }
+
+    public String getAdultString(){
+        return Integer.toString(this.adult);
     }
 
     public void setAdult(int adult) {
@@ -118,22 +140,5 @@ public class StopInfo {
 
     public void setRequired(String required) {
         this.required = required;
-    }
-
-    @Override
-    public String toString() {
-        return "StopInfo{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", routeId=" + routeId +
-                ", stops_in_route_id=" + stops_in_route_id +
-                ", sequence=" + sequence +
-                ", time_table_id=" + time_table_id +
-                ", departure_time=" + departure_time +
-                ", child=" + child +
-                ", teenager=" + teenager +
-                ", adult=" + adult +
-                ", required=" + required +
-                '}';
     }
 }

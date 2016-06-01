@@ -5,5 +5,7 @@ package pe.dwkim.hapduk_terminal.Model.Enum;
  */
 public enum RecyclerViewType {
     FIRST_ITEM,
-    ITEM
+    ITEM,
+    LAST_ITEM,
+    FIRST_AND_LAST_ITEM
 }

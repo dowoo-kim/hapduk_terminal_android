@@ -13,6 +13,7 @@ import pe.dwkim.hapduk_terminal.R;
 import pe.dwkim.hapduk_terminal.View.Item.ListItem;
 import pe.dwkim.hapduk_terminal.View.ViewHolder.TimeTableRecyclerViewHolderFirstItem;
 import pe.dwkim.hapduk_terminal.View.ViewHolder.TimeTableRecyclerViewHolderItem;
+import pe.dwkim.hapduk_terminal.View.ViewHolder.TimeTableRecyclerViewHolderLastItem;
 
 /**
  * Created by dwkim on 16. 5. 24..
@@ -20,10 +21,12 @@ import pe.dwkim.hapduk_terminal.View.ViewHolder.TimeTableRecyclerViewHolderItem;
 public class TimeTableRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     private List<ListItem> listItem;
     private Context context;
+    private boolean isLastAndFirst;
 
     public TimeTableRecyclerViewAdapter(Context context, List<ListItem> listItem) {
         this.context = context;
         this.listItem = listItem;
+        isLastAndFirst = false;
     }
 
     @Override
@@ -31,12 +34,23 @@ public class TimeTableRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerV
         View layoutView = null;
 
         if(viewType == RecyclerViewType.FIRST_ITEM.ordinal()){
-            layoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_item_first_time_table, null);
+            layoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.time_table_first_item, null);
             TimeTableRecyclerViewHolderFirstItem rcv = new TimeTableRecyclerViewHolderFirstItem(layoutView);
             return rcv;
         }
+        else if(viewType == RecyclerViewType.LAST_ITEM.ordinal()){
+            layoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.time_table_last_item, null);
+            TimeTableRecyclerViewHolderLastItem rcv = new TimeTableRecyclerViewHolderLastItem(layoutView);
+            return rcv;
+        }
+        else if(viewType == RecyclerViewType.FIRST_AND_LAST_ITEM.ordinal()){
+            layoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.time_table_last_item, null);
+            TimeTableRecyclerViewHolderLastItem rcv = new TimeTableRecyclerViewHolderLastItem(layoutView);
+            isLastAndFirst = true;
+            return rcv;
+        }
         else{
-            layoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_item_time_table, null);
+            layoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.time_table_item, null);
             TimeTableRecyclerViewHolderItem rcv = new TimeTableRecyclerViewHolderItem(layoutView);
             return rcv;
         }
@@ -48,6 +62,13 @@ public class TimeTableRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerV
             TimeTableRecyclerViewHolderFirstItem firstItem = (TimeTableRecyclerViewHolderFirstItem)holder;
             firstItem.firstDepartureTime.setText(listItem.get(position).getDepartureTime().toString());
             firstItem.firstStopsName.setText(listItem.get(position).getStopInfoName().toString());
+        }
+        else if(holder instanceof TimeTableRecyclerViewHolderLastItem){
+            TimeTableRecyclerViewHolderLastItem lastItem = (TimeTableRecyclerViewHolderLastItem)holder;
+            if(isLastAndFirst) {
+                lastItem.lastDepartureTime.setText(listItem.get(position).getDepartureTime().toString());
+            }
+            lastItem.lastStopsName.setText(listItem.get(position).getStopInfoName().toString());
         }
         else{
             TimeTableRecyclerViewHolderItem item = (TimeTableRecyclerViewHolderItem)holder;

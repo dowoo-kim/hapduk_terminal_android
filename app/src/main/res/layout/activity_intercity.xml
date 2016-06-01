@@ -2,8 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/activity_padding"
-    android:theme="@style/AppTheme.ActivityBackground">
+    android:padding="@dimen/activity_padding">
     <RelativeLayout
         android:id="@+id/select_destination_area"
         android:layout_width="match_parent"
@@ -13,9 +12,10 @@
             android:layout_width="64dp"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:gravity="left"
             android:text="@string/destination"
-            style="@style/Font.Big.Bold"/>
+            style="@style/Font.Bold"/>
         <TextView
             android:id="@+id/text_destination"
             android:layout_width="match_parent"
@@ -24,9 +24,9 @@
             android:layout_marginLeft="80dp"
             android:layout_marginRight="80dp"
             android:layout_centerVertical="true"
-            android:gravity="center"
+            android:gravity="left"
             android:hint="@string/pleaseSelectDestination"
-            style="@style/Font"/>
+            style="@style/Font14"/>
         <Button
             android:id="@+id/button_selectDestination"
             android:layout_width="64dp"
@@ -35,7 +35,7 @@
             android:layout_centerVertical="true"
             android:gravity="center"
             android:text="@string/select"
-            style="@style/Font.Big"
+            style="@style/Font.Bold"
             android:onClick="clickSelectDestinationButton"/>
     </RelativeLayout>
     <View
@@ -57,8 +57,6 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
-            android:paddingTop="4dp"
-            android:paddingBottom="4dp"
             android:orientation="horizontal">
             <TextView
                 android:id="@+id/label_required"
@@ -66,15 +64,15 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/required"
-                style="@style/Font.Big.Bold"/>
+                style="@style/Font.Bold"/>
             <TextView
                 android:id="@+id/text_required"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:gravity="center"
-                android:text="1시간 20분"
-                style="@style/Font.Big"/>
+                android:text=""
+                style="@style/Font14"/>
         </LinearLayout>
         <LinearLayout
             android:id="@+id/fee_area"
@@ -82,57 +80,55 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/required_area"
             android:layout_alignParentLeft="true"
-            android:paddingTop="4dp"
-            android:paddingBottom="4dp"
             android:orientation="horizontal">
             <TextView
                 android:id="@+id/label_adult"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
+                android:gravity="left"
                 android:text="@string/adult"
-                style="@style/Font"/>
+                style="@style/Font.Bold"/>
             <TextView
                 android:id="@+id/text_adult"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:text="600원"
-                style="@style/Font"/>
+                android:gravity="left"
+                android:text="0"
+                style="@style/Font14"/>
             <TextView
                 android:id="@+id/label_teenager"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
+                android:gravity="left"
                 android:text="@string/teenager"
-                style="@style/Font"/>
+                style="@style/Font.Bold"/>
             <TextView
                 android:id="@+id/text_teenager"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:text="600원"
-                style="@style/Font"/>
+                android:gravity="left"
+                android:text="0"
+                style="@style/Font14"/>
             <TextView
                 android:id="@+id/label_child"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
+                android:gravity="left"
                 android:text="@string/child"
-                style="@style/Font"/>
+                style="@style/Font.Bold"/>
             <TextView
                 android:id="@+id/text_child"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:text="600원"
-                style="@style/Font"/>
+                android:gravity="left"
+                android:text="0"
+                style="@style/Font14"/>
         </LinearLayout>
     </RelativeLayout>
     <View
@@ -154,7 +150,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:layout_weight="1"
-            android:text="출발시각"
+            android:text="@string/departure_time"
             style="@style/Font"/>
         <View
             android:layout_width="1dp"
@@ -168,7 +164,7 @@
             android:layout_marginBottom="8dp"
             android:layout_weight="1"
             style="@style/Font"
-            android:text="경유지"/>
+            android:text="@string/name"/>
     </LinearLayout>
     <View
         android:id="@+id/vertical_line3"
@@ -189,4 +185,25 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:src="@android:drawable/ic_dialog_email" />
+    <RelativeLayout
+        android:id="@+id/list_empty_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="80dp">
+        <ImageView
+            android:id="@+id/list_empty_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/list_empty_image"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/between_component_vertical_margin"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_below="@id/list_empty_image_view"
+            android:text="@string/notFoundRoutePleaseSearchAgain"
+            style="@style/Font"/>
+    </RelativeLayout>
 </RelativeLayout>

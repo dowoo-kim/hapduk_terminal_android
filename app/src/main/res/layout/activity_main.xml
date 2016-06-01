@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:padding="@dimen/activity_padding"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:theme="@style/AppTheme.NoActionBar">
     <TextView
         android:id="@+id/title"
@@ -13,26 +13,23 @@
         android:layout_marginBottom="@dimen/title_below_margin"
         android:text="@string/app_name_to_korean"
         android:gravity="center"
-        style="@style/Font.Title"/>
+        android:background="#00000000"
+        style="@style/Font.Big"/>
     <Button
         android:id="@+id/intercity_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_below="@id/title"
         android:layout_centerHorizontal="true"
         android:text="@string/intercity"
         android:gravity="center"
-        style="@style/Font.Big"
+        style="@style/AppTheme.Button.Main"
         android:onClick="clickIntercityButton"/>
     <Button
         android:id="@+id/city_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_below="@id/intercity_button"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:text="@string/city"
         android:gravity="center"
-        style="@style/Font.Big"
+        style="@style/AppTheme.Button.Main"
         android:onClick="clickCityButton"/>
 </RelativeLayout>

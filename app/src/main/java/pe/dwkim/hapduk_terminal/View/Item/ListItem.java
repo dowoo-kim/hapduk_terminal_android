@@ -13,14 +13,21 @@ public class ListItem {
     private String stopInfoName;
     private RecyclerViewType viewType;
 
-    public ListItem(int stopInfoid, int routeId, String departureTime, String stopInfoName, int sequence) {
+    public ListItem(int stopInfoid, int routeId, String departureTime, String stopInfoName, int sequence, int isLastItem) {
         this.stopInfoid = stopInfoid;
         this.routeId = routeId;
         this.departureTime = departureTime;
         this.stopInfoName = stopInfoName;
-        if(sequence == 000){
+        if(sequence == 000 && isLastItem == 1){
+            viewType = RecyclerViewType.FIRST_AND_LAST_ITEM;
+        }
+        else if(sequence ==000){
             viewType = RecyclerViewType.FIRST_ITEM;
-        }else{
+        }
+        else if(isLastItem == 1){
+            viewType = RecyclerViewType.LAST_ITEM;
+        }
+        else{
             viewType = RecyclerViewType.ITEM;
         }
     }

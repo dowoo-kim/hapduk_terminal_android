@@ -1,16 +1,28 @@
 <resources>
     <string name="app_name">Hapduk_terminal</string>
-    <string name="app_name_to_korean">합덕터미널</string>
+    <string name="app_name_to_korean">합덕 버스 터미널</string>
+
     <string name="city">시내</string>
     <string name="intercity">시외</string>
-    <string name="pleaseSendManyUserComment">많은 사용자 의견을 보내주세요.</string>
+
     <string name="departure">출발지</string>
-    <string name="pleaseSelectDeparture">출발지를 선택해 주세요.</string>
+    <string name="departure_time">출발시각</string>
     <string name="destination">도착지</string>
-    <string name="pleaseSelectDestination">도착지를 선택해 주세요.</string>
+
     <string name="select">선택</string>
+    <string name="name">이름</string>
+
     <string name="required">예상소요시간</string>
+
     <string name="adult">어른</string>
     <string name="teenager">청소년</string>
     <string name="child">어린이</string>
+
+
+    <string name="ready_to_service">서비스 준비 중입니다</string>
+    <string name="pleaseSelectDeparture">출발지를 선택해 주세요.</string>
+    <string name="pleaseSelectDestination">도착지를 선택해 주세요.</string>
+    <string name="failed_to_server_communication">서버와 통신에 실패하였습니다.</string>
+    <string name="pleaseSendManyUserComment">많은 사용자 의견을 보내주세요.</string>
+    <string name="notFoundRoutePleaseSearchAgain">노선 정보가 없습니다.\n도착지를 선택해주세요.</string>
 </resources>
