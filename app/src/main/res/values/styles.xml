@@ -2,11 +2,12 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorAccent">#9E9E9E</item>
-        <item name="colorPrimary">#616161</item>
-        <item name="colorPrimaryDark">#424242</item>
+        <item name="colorPrimaryDark">#212121</item>
+        <item name="colorPrimary">#424242</item>
+        <item name="colorAccent">#424242</item>
+        <item name="colorControlNormal">#424242</item>
         <item name="colorControlHighlight">#BDBDBD</item>
-        <item name="colorControlNormal">#9E9E9E</item>
+
         <item name="android:typeface">monospace</item>
     </style>
 
@@ -20,49 +21,41 @@
         <item name="android:textColor">#FFFFFF</item>
     </style>
 
-    <style name="AppTheme.Button.Normal" parent="Widget.AppCompat.Button.Colored">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">42dp</item>
-        <item name="android:paddingLeft">16dp</item>
-        <item name="android:paddingRight">16dp</item>
-    </style>
-
-    <style name="AppTheme.Button.Main" parent="Widget.AppCompat.Button.Colored">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">42dp</item>
-        <item name="android:paddingLeft">48dp</item>
-        <item name="android:paddingRight">48dp</item>
-    </style>
-
-    <style name="Font14" parent="@android:style/TextAppearance.Medium">
-        <item name="android:textSize">14sp</item>
-        <item name="android:gravity">center</item>
-    </style>
-
     <style name="Font" parent="@android:style/TextAppearance.Medium">
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Font.Center" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">#FFFFFF</item>
         <item name="android:gravity">center</item>
     </style>
 
-    <style name="Font.Bold" parent="@android:style/TextAppearance.Medium">
+    <style name="Font.Center.Bold" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">#FFFFFF</item>
         <item name="android:textStyle">bold</item>
     </style>
 
     <style name="Font.Big">
         <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="Font.White" parent="@android:style/TextAppearance.Medium">
-        <item name="android:textSize">16sp</item>
-        <item name="android:gravity">center</item>
+    <style name="Font.LeftAndCenterVertical" parent="@android:style/TextAppearance.Medium">
         <item name="android:textColor">#FFFFFF</item>
+        <item name="android:gravity">left|center_vertical</item>
     </style>
 
-    <style name="Font.White.Big">
-        <item name="android:textSize">24sp</item>
+    <style name="Font.LeftAndCenterVertical.Bold" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="ExpandableListViewIndicatorLeft">
         <item name="android:expandableListPreferredChildIndicatorLeft">?android:attr/expandableListPreferredChildIndicatorLeft</item>
+    </style>
+
+    <style name="LayoutBackgroundColor">
+        <item name="android:background">#757575</item>
     </style>
 </resources>
