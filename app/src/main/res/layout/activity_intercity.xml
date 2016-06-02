@@ -2,189 +2,149 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="@dimen/activity_padding">
     <RelativeLayout
         android:id="@+id/select_destination_area"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/label_destination"
-            android:layout_width="64dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:gravity="left"
-            android:text="@string/destination"
-            style="@style/Font.Bold"/>
+        android:layout_height="@dimen/layout_height"
+        android:paddingLeft="@dimen/layout_paddingLeft"
+        style="@style/LayoutBackgroundColor">
         <TextView
             android:id="@+id/text_destination"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignRight="@id/label_destination"
-            android:layout_marginLeft="80dp"
-            android:layout_marginRight="80dp"
             android:layout_centerVertical="true"
-            android:gravity="left"
+            android:layout_marginRight="82dp"
+            android:textColorHint="#EEEEEE"
             android:hint="@string/pleaseSelectDestination"
-            style="@style/Font14"/>
+            style="@style/Font.LeftAndCenterVertical.Bold"/>
         <Button
             android:id="@+id/button_selectDestination"
-            android:layout_width="64dp"
-            android:layout_height="wrap_content"
+            android:layout_width="76dp"
+            android:layout_height="64dp"
+            android:layout_marginRight="2dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:gravity="center"
             android:text="@string/select"
-            style="@style/Font.Bold"
+            android:theme="@style/AppTheme.Button"
+            style="@style/Font.Center.Bold"
             android:onClick="clickSelectDestinationButton"/>
     </RelativeLayout>
-    <View
-        android:id="@+id/vertical_line1"
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="#000000"
-        android:layout_below="@id/select_destination_area"/>
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/destination_info_area"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/vertical_line1">
+        android:layout_height="@dimen/layout_height"
+        android:layout_below="@id/select_destination_area"
+        android:layout_marginTop="@dimen/between_layout_vertical_margin"
+        android:padding="@dimen/layout_padding"
+        android:orientation="vertical"
+        style="@style/LayoutBackgroundColor">
         <LinearLayout
             android:id="@+id/required_area"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
             android:orientation="horizontal">
             <TextView
                 android:id="@+id/label_required"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
+                android:layout_height="match_parent"
                 android:text="@string/required"
-                style="@style/Font.Bold"/>
+                style="@style/Font.LeftAndCenterVertical.Bold"/>
             <TextView
                 android:id="@+id/text_required"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:gravity="center"
-                android:text=""
-                style="@style/Font14"/>
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/between_component_horizontal_margin"
+                style="@style/Font.LeftAndCenterVertical"/>
         </LinearLayout>
         <LinearLayout
             android:id="@+id/fee_area"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/required_area"
-            android:layout_alignParentLeft="true"
             android:orientation="horizontal">
             <TextView
                 android:id="@+id/label_adult"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="left"
                 android:text="@string/adult"
-                style="@style/Font.Bold"/>
+                style="@style/Font.LeftAndCenterVertical"/>
             <TextView
                 android:id="@+id/text_adult"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="left"
-                android:text="0"
-                style="@style/Font14"/>
+                style="@style/Font.LeftAndCenterVertical"/>
             <TextView
                 android:id="@+id/label_teenager"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="left"
                 android:text="@string/teenager"
-                style="@style/Font.Bold"/>
+                style="@style/Font.LeftAndCenterVertical"/>
             <TextView
                 android:id="@+id/text_teenager"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="left"
-                android:text="0"
-                style="@style/Font14"/>
+                style="@style/Font.LeftAndCenterVertical"/>
             <TextView
                 android:id="@+id/label_child"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="left"
                 android:text="@string/child"
-                style="@style/Font.Bold"/>
+                style="@style/Font.LeftAndCenterVertical"/>
             <TextView
                 android:id="@+id/text_child"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="left"
-                android:text="0"
-                style="@style/Font14"/>
+                style="@style/Font.LeftAndCenterVertical"/>
         </LinearLayout>
-    </RelativeLayout>
-    <View
-        android:id="@+id/vertical_line2"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="8dp"
-        android:background="#000000"
-        android:layout_below="@id/destination_info_area"/>
+    </LinearLayout>
     <LinearLayout
         android:id="@+id/recyclerView_header"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/vertical_line2">
+        android:layout_height="@dimen/header_height"
+        android:layout_below="@id/destination_info_area"
+        android:layout_marginTop="@dimen/between_layout_vertical_margin"
+        style="@style/LayoutBackgroundColor">
         <TextView
             android:id="@+id/text_header_departure_time"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/departure_time"
-            style="@style/Font"/>
+            android:gravity="center"
+            style="@style/Font.Center.Bold"/>
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:background="#000000"/>
+            android:background="#FFFFFF"/>
         <TextView
             android:id="@+id/text_header_stops_name"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            style="@style/Font"
+            android:gravity="center"
+            style="@style/Font.Center.Bold"
             android:text="@string/name"/>
     </LinearLayout>
-    <View
-        android:id="@+id/vertical_line3"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#000000"
-        android:layout_below="@id/recyclerView_header"/>
     <android.support.v7.widget.RecyclerView
         android:id="@+id/time_table_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"
-        android:layout_below="@id/vertical_line3" />
+        android:layout_below="@id/recyclerView_header" />
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:src="@android:drawable/ic_dialog_email" />
+        android:src="@android:drawable/ic_input_add" />
     <RelativeLayout
         android:id="@+id/list_empty_layout"
         android:layout_width="match_parent"
