@@ -14,9 +14,9 @@ import retrofit2.http.Path;
  */
 public interface HapdukTerminalService {
 
-    @GET("/api/get_intercity_destinations")
+    @GET("api/get_intercity_destinations")
     Call<List<Destination>> getIntercityDestinations();
 
-    @GET("/api/get_route/{destinationId}")
+    @GET("api/get_route/{destinationId}")
     Call<List<StopInfo>> getRoute(@Path("destinationId") int destinationId);
 }
