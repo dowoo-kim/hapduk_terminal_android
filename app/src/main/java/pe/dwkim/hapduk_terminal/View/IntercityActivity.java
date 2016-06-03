@@ -67,9 +67,8 @@ public class IntercityActivity extends AppCompatActivity{
         setContentView(R.layout.activity_intercity);
         
         initViewVariable();
-        initDestinationList();
         initFabAction();
-        setIsListEmpty(true);
+        initDestinationList();
     }
 
     private void initViewVariable(){
@@ -103,6 +102,7 @@ public class IntercityActivity extends AppCompatActivity{
 
     private void initDestinationList(){
         getIntercityDestinations();
+        setIsListEmpty(true);
     }
 
     public void getIntercityDestinations(){
@@ -126,11 +126,14 @@ public class IntercityActivity extends AppCompatActivity{
         if(destinations != null && destinations.size() > 0) {
             showSelectDestinationDialog();
         }
+        else {
+            showToast(getString(R.string.failed_to_server_communication));
+        }
     }
 
     public void showSelectDestinationDialog(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("도착지를 선택 해주세요");
+        builder.setTitle(R.string.pleaseSelectDestination);
 
         if (expandableListGroupName.size() == 0) {
                 expandableListGroupName.add(destinations.get(0).getDivisionName());
@@ -263,10 +266,6 @@ public class IntercityActivity extends AppCompatActivity{
         }
     }
 
-    private void showToast(String text){
-        Toast.makeText(this, text, Toast.LENGTH_LONG).show();
-    }
-
     public void setIsListEmpty(boolean isListEmpty) {
 
         if(isListEmpty) {
@@ -289,5 +288,9 @@ public class IntercityActivity extends AppCompatActivity{
 
             this.isListEmpty = isListEmpty;
         }
+    }
+
+    private void showToast(String text){
+        Toast.makeText(this, text, Toast.LENGTH_LONG).show();
     }
 }
