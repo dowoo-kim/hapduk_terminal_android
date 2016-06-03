@@ -246,18 +246,14 @@ public class IntercityActivity extends AppCompatActivity{
     }
 
     public void setIsListEmpty(boolean isListEmpty) {
-        RelativeLayout destinationInfoArea = (RelativeLayout) findViewById(R.id.destination_info_area);
-        View verticalLine2 = (View) findViewById(R.id.vertical_line2);
+        LinearLayout destinationInfoArea = (LinearLayout) findViewById(R.id.destination_info_area);
         LinearLayout recyclerViewHeader = (LinearLayout) findViewById(R.id.recyclerView_header);
-        View verticalLine3 = (View) findViewById(R.id.vertical_line3);
         RecyclerView timeTableRecyclerView = (RecyclerView) findViewById(R.id.time_table_recyclerView);
         RelativeLayout listEmptyLayout = (RelativeLayout) findViewById(R.id.list_empty_layout);
 
         if(isListEmpty) {
             destinationInfoArea.setVisibility(View.GONE);
-            verticalLine2.setVisibility(View.GONE);
             recyclerViewHeader .setVisibility(View.GONE);
-            verticalLine3.setVisibility(View.GONE);
             timeTableRecyclerView.setVisibility(View.GONE);
 
             listEmptyLayout.setVisibility(View.VISIBLE);
@@ -268,9 +264,7 @@ public class IntercityActivity extends AppCompatActivity{
         }
         else{
             destinationInfoArea.setVisibility(View.VISIBLE);
-            verticalLine2.setVisibility(View.VISIBLE);
             recyclerViewHeader .setVisibility(View.VISIBLE);
-            verticalLine3.setVisibility(View.VISIBLE);
             timeTableRecyclerView.setVisibility(View.VISIBLE);
 
             listEmptyLayout.setVisibility(View.GONE);

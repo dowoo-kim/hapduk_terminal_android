@@ -1,32 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_marginTop="@dimen/between_layout_vertical_margin"
+        style="@style/LayoutBackgroundColor">
         <TextView
             android:id="@+id/text_first_departure_time"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
             android:layout_weight="1"
-            android:text="1"
-            style="@style/Font"/>
+            style="@style/Font.Center"/>
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:background="#000000"/>
+            android:background="#FFFFFF"/>
         <TextView
             android:id="@+id/text_first_stops_name"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
             android:layout_weight="1"
-            android:text="2"
-            style="@style/Font"/>
+            android:singleLine="true"
+            style="@style/Font.Center"/>
     </LinearLayout>
-</RelativeLayout>
+</LinearLayout>
