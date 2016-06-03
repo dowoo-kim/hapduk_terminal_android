@@ -1,7 +1,10 @@
 package pe.dwkim.hapduk_terminal.View;
 
 import android.app.AlertDialog;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.res.ResourcesCompat;
@@ -42,34 +45,60 @@ public class IntercityActivity extends AppCompatActivity{
     private List<Destination> destinations = null;
     private HashMap<String, List<Destination>> expandableListChild = new HashMap<String, List<Destination>>();
 
+    private CoordinatorLayout coordinatorLayout;
+    private LinearLayout destinationInfoArea;
+    private LinearLayout recyclerViewHeader;
+    private RelativeLayout listEmptyLayout;
+
     private TextView destinationTextView;
     private TextView requiredTextView;
     private TextView childFeeTextView;
     private TextView teenagerFeeTextView;
     private TextView adultFeeTextView;
+    private RecyclerView timeTableRecyclerView;
 
+    private FloatingActionButton fab;
     private AlertDialog dialog;
-
     private GridLayoutManager gridLayoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intercity);
+        
+        initViewVariable();
+        initDestinationList();
+        initFabAction();
+        setIsListEmpty(true);
+    }
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+    private void initViewVariable(){
+        coordinatorLayout = (CoordinatorLayout)findViewById(R.id.coordinatorLayout);
+        destinationInfoArea = (LinearLayout) findViewById(R.id.destination_info_area);
+        recyclerViewHeader = (LinearLayout) findViewById(R.id.recyclerView_header);
+        listEmptyLayout = (RelativeLayout) findViewById(R.id.list_empty_layout);
+        destinationTextView = (TextView)findViewById(R.id.text_destination);
+        teenagerFeeTextView = (TextView)findViewById(R.id.text_teenager);
+        adultFeeTextView = (TextView)findViewById(R.id.text_adult);
+        childFeeTextView = (TextView)findViewById(R.id.text_child);
+        requiredTextView = (TextView)findViewById(R.id.text_required);
+        timeTableRecyclerView = (RecyclerView) findViewById(R.id.time_table_recyclerView);
+        fab = (FloatingActionButton)findViewById(R.id.fab);
+    }
+
+    private void initFabAction(){
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, R.string.pleaseSendManyUserComment, Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onClick(View v) {
+                Snackbar snackbar = Snackbar.make(coordinatorLayout, R.string.pleaseSendManyUserComment, Snackbar.LENGTH_LONG);
+                snackbar.setAction(R.string.send, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                }).setActionTextColor(Color.YELLOW).show();
             }
         });
-
-        destinationTextView = (TextView)findViewById(R.id.text_destination);
-
-        setIsListEmpty(true);
-        initDestinationList();
     }
 
     private void initDestinationList(){
@@ -222,16 +251,9 @@ public class IntercityActivity extends AppCompatActivity{
         }
 
         if(destinationInfo != null) {
-            requiredTextView = (TextView)findViewById(R.id.text_required);
             requiredTextView.setText(destinationInfo.getRequired());
-
-            childFeeTextView = (TextView)findViewById(R.id.text_child);
             childFeeTextView.setText(destinationInfo.getChildString());
-
-            teenagerFeeTextView = (TextView)findViewById(R.id.text_teenager);
             teenagerFeeTextView.setText(destinationInfo.getTeenagerString());
-
-            adultFeeTextView = (TextView)findViewById(R.id.text_adult);
             adultFeeTextView.setText(destinationInfo.getAdultString());
 
             destinationTextView.setText(destinationInfo.getName());
@@ -246,10 +268,6 @@ public class IntercityActivity extends AppCompatActivity{
     }
 
     public void setIsListEmpty(boolean isListEmpty) {
-        LinearLayout destinationInfoArea = (LinearLayout) findViewById(R.id.destination_info_area);
-        LinearLayout recyclerViewHeader = (LinearLayout) findViewById(R.id.recyclerView_header);
-        RecyclerView timeTableRecyclerView = (RecyclerView) findViewById(R.id.time_table_recyclerView);
-        RelativeLayout listEmptyLayout = (RelativeLayout) findViewById(R.id.list_empty_layout);
 
         if(isListEmpty) {
             destinationInfoArea.setVisibility(View.GONE);

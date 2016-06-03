@@ -10,6 +10,7 @@
     <string name="destination">도착지</string>
 
     <string name="select">선택</string>
+    <string name="send">전송</string>
     <string name="name">이름</string>
 
     <string name="required">예상소요시간</string>
