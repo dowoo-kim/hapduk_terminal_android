@@ -171,5 +171,5 @@
         android:layout_gravity="bottom|right"
         android:layout_marginBottom="@dimen/fab_margin"
         android:layout_marginRight="@dimen/fab_margin"
-        android:src="@android:drawable/ic_input_add"/>
+        android:src="@android:drawable/ic_dialog_email"/>
 </android.support.design.widget.CoordinatorLayout>

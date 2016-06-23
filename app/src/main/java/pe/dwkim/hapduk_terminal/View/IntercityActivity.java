@@ -125,7 +125,7 @@ public class IntercityActivity extends AppCompatActivity{
     public void clickSelectDestinationButton(View view){
         if(destinations != null && destinations.size() > 0) {
             showSelectDestinationDialog();
-        }
+    }
         else {
             showToast(getString(R.string.failed_to_server_communication));
         }
@@ -267,7 +267,6 @@ public class IntercityActivity extends AppCompatActivity{
     }
 
     public void setIsListEmpty(boolean isListEmpty) {
-
         if(isListEmpty) {
             destinationInfoArea.setVisibility(View.GONE);
             recyclerViewHeader .setVisibility(View.GONE);
