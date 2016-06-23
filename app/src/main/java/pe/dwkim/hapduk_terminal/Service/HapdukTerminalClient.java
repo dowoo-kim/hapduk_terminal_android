@@ -8,7 +8,7 @@ import retrofit2.Retrofit;
  */
 public class HapdukTerminalClient {
     private static HapdukTerminalService CLIENT;
-    private static final String API_URL = "http://52.78.15.44/";
+    private static final String API_URL = "http://52.78.25.44/";
 
     private HapdukTerminalClient(){}
 
